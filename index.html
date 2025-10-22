@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renergy4all - Énergie Solaire pour une Afrique Prospère</title>
+    <meta name="description" content="Renergy4all - Solutions d'énergie solaire propre et abordable pour l'Afrique. Installation de panneaux solaires, kits solaires et systèmes photovoltaïques.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .solar-gradient {
+            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+        }
+        
+        .green-gradient {
+            background: linear-gradient(135deg, #00b09b 0%, #96c93d 100%);
+        }
+        
+        .hero-pattern {
+            background-color: #1e3a8a;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Chatbot styles */
+        .chat-bubble {
+            max-width: 80%;
+            padding: 12px 16px;
+            border-radius: 18px;
+            margin-bottom: 8px;
+            word-wrap: break-word;
+        }
+        
+        .chat-user {
+            background: #3b82f6;
+            color: white;
+            margin-left: auto;
+        }
+        
+        .chat-bot {
+            background: #f3f4f6;
+            color: #1f2937;
+        }
+        
+        .chatbot-hidden {
+            display: none;
+        }
+        
+        .chatbot-visible {
+            display: flex;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center">
+                    <img src="images/logo-renergy4all.png" 
+                         alt="Renergy4all Group Logo" 
+                         class="h-20 w-auto object-contain mr-3"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="hidden items-center justify-center w-16 h-20 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg mr-3">
+                        <i class="fas fa-solar-panel text-3xl text-white"></i>
+                    </div>
+                    <!--<div>
+                        <h1 class="text-2xl font-bold text-gray-900">Renergy4all</h1>
+                        <p class="text-xs text-gray-600">Énergie Solaire pour l'Afrique</p>
+                    </div> -->
+                </div>
+                
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#accueil" class="text-gray-700 hover:text-blue-600 transition">Accueil</a>
+                    <a href="#qui-sommes-nous" class="text-gray-700 hover:text-blue-600 transition">Qui sommes-nous</a>
+                    <a href="#services" class="text-gray-700 hover:text-blue-600 transition">Services</a>
+                    
+                    <!-- Dropdown Nos Projets -->
+                    <div class="relative group">
+                        <button class="text-gray-700 hover:text-blue-600 transition flex items-center">
+                            Nos Projets
+                            <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <a href="#galerie" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition rounded-lg">
+                                <i class="fas fa-images mr-2"></i>Galerie Photos
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <a href="#simulation" class="text-gray-700 hover:text-blue-600 transition">Simulation</a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-600 transition">Contact</a>
+                </div>
+                
+                <button id="mobile-menu-btn" class="md:hidden text-gray-700">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-4 py-4 space-y-3">
+                <a href="#accueil" class="block text-gray-700 hover:text-blue-600">Accueil</a>
+                <a href="#qui-sommes-nous" class="block text-gray-700 hover:text-blue-600">Qui sommes-nous</a>
+                <a href="#services" class="block text-gray-700 hover:text-blue-600">Services</a>
+                <div>
+                    <button id="mobile-projets-toggle" class="w-full text-left text-gray-700 hover:text-blue-600 flex items-center justify-between">
+                        Nos Projets
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </button>
+                    <div id="mobile-projets-submenu" class="hidden pl-4 pt-2 space-y-2">
+                        <a href="#galerie" class="block text-gray-600 hover:text-blue-600">
+                            <i class="fas fa-images mr-2"></i>Galerie Photos
+                        </a>
+                    </div>
+                </div>
+                <a href="#simulation" class="block text-gray-700 hover:text-blue-600">Simulation</a>
+                <a href="#contact" class="block text-gray-700 hover:text-blue-600">Contact</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section id="accueil" class="hero-pattern pt-32 pb-20 px-4">
+        <div class="max-w-7xl mx-auto text-center text-white fade-in">
+            <i class="fas fa-sun text-6xl mb-6 text-yellow-300"></i>
+            <h1 class="text-5xl md:text-6xl font-bold mb-6">Renergy4all Group</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+                Catalyseur d'une Afrique éclairée et prospère grâce à l'énergie solaire propre et abordable
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#simulation" class="bg-yellow-400 text-gray-900 px-8 py-4 rounded-full font-semibold hover:bg-yellow-300 transition transform hover:scale-105">
+                    <i class="fas fa-calculator mr-2"></i>Simuler mon installation
+                </a>
+                <a href="#contact" class="bg-white text-blue-900 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition transform hover:scale-105">
+                    <i class="fas fa-envelope mr-2"></i>Nous contacter
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Qui sommes-nous Section -->
+    <section id="qui-sommes-nous" class="py-20 px-4 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Qui sommes-nous</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Découvrez notre vision, notre mission et les valeurs qui nous animent
+                </p>
+            </div>
+            
+            <!-- Vision Subsection -->
+            <div class="mb-20">
+                <div class="text-center mb-8">
+                    <h3 class="text-3xl font-bold text-blue-600 mb-4"><i class="fas fa-eye mr-3"></i>Notre Vision</h3>
+                </div>
+                <div class="max-w-4xl mx-auto bg-gradient-to-r from-blue-50 to-green-50 p-8 md:p-12 rounded-2xl shadow-lg">
+                    <p class="text-lg md:text-xl text-gray-800 leading-relaxed mb-6">
+                        Notre vision est d'être le <strong>catalyseur d'une Afrique éclairée et prospère</strong>, où l'accès universel à l'énergie solaire propre et abordable est une réalité, permettant à chaque individu et communauté de réaliser son plein potentiel.
+                    </p>
+                    <p class="text-lg md:text-xl text-gray-800 leading-relaxed mb-6">
+                        Inspirés par <em>Genèse 2:15</em>, nous aspirons à œuvrer pour un avenir durable et équitable sur le continent tout en préservant l'environnement.
+                    </p>
+                    <blockquote class="border-l-4 border-blue-600 pl-6 italic text-gray-700 text-lg">
+                        « L'Éternel Dieu prit l'homme, et le plaça dans le jardin d'Éden pour le cultiver et pour le garder. »
+                        <span class="block mt-2 text-sm text-gray-600">— Genèse 2:15</span>
+                    </blockquote>
+                </div>
+            </div>
+            
+            <!-- Mission Subsection -->
+            <div class="mb-20">
+                <div class="text-center mb-8">
+                    <h3 class="text-3xl font-bold text-green-600 mb-4"><i class="fas fa-bullseye mr-3"></i>Notre Mission</h3>
+                </div>
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-gradient-to-r from-green-50 to-blue-50 p-8 md:p-12 rounded-2xl shadow-lg">
+                        <p class="text-lg md:text-xl text-gray-800 leading-relaxed mb-6">
+                            Notre mission est de <strong>démocratiser l'accès à l'énergie solaire en Afrique</strong> en fournissant des solutions innovantes, fiables et abordables qui transforment la vie des individus, des entreprises et des communautés.
+                        </p>
+                        <div class="grid md:grid-cols-2 gap-6 mt-8">
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-2xl text-green-600 mr-3 mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 mb-2">Accessibilité</h4>
+                                    <p class="text-gray-700">Rendre l'énergie solaire accessible à tous, particuliers comme entreprises</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-2xl text-green-600 mr-3 mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 mb-2">Innovation</h4>
+                                    <p class="text-gray-700">Intégrer les technologies de pointe pour des solutions durables</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-2xl text-green-600 mr-3 mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 mb-2">Développement local</h4>
+                                    <p class="text-gray-700">Contribuer à l'autonomisation des communautés africaines</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-2xl text-green-600 mr-3 mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 mb-2">Durabilité</h4>
+                                    <p class="text-gray-700">Promouvoir un avenir énergétique propre et respectueux de l'environnement</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Valeurs Subsection -->
+            <div class="mb-8">
+                <div class="text-center mb-8">
+                    <h3 class="text-3xl font-bold text-yellow-600 mb-4"><i class="fas fa-heart mr-3"></i>Nos Valeurs</h3>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                <!-- Intégrité -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-handshake text-3xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3 text-center">Intégrité</h3>
+                    <p class="text-sm text-gray-600 mb-4 text-center uppercase tracking-wide">Honesty & Transparency</p>
+                    <p class="text-gray-700 text-center leading-relaxed">
+                        Agir avec honnêteté et transparence dans toutes nos interactions, en respectant nos engagements envers nos clients, partenaires et communautés.
+                    </p>
+                </div>
+                
+                <!-- Excellence -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-star text-3xl text-yellow-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3 text-center">Excellence</h3>
+                    <p class="text-sm text-gray-600 mb-4 text-center uppercase tracking-wide">Quality & Innovation</p>
+                    <p class="text-gray-700 text-center leading-relaxed">
+                        Viser constamment l'excellence dans nos produits et services, en intégrant les dernières innovations technologiques pour offrir des solutions de qualité supérieure.
+                    </p>
+                </div>
+                
+                <!-- Engagement Communautaire -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-users text-3xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3 text-center">Engagement Communautaire</h3>
+                    <p class="text-sm text-gray-600 mb-4 text-center uppercase tracking-wide">Service & Empowerment</p>
+                    <p class="text-gray-700 text-center leading-relaxed">
+                        S'engager activement auprès des communautés que nous servons, en créant des opportunités d'autonomisation et en contribuant au développement local.
+                    </p>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section id="services" class="py-20 px-4 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Nos Services</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Solutions complètes d'énergie solaire adaptées à vos besoins
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl shadow-lg card-hover">
+                    <i class="fas fa-home text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Installations Résidentielles</h3>
+                    <p class="text-gray-700 mb-4">
+                        Systèmes solaires complets pour maisons et résidences, avec dimensionnement personnalisé.
+                    </p>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>Kits solaires plug & play</li>
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>Installation clé en main</li>
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>Maintenance et suivi</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 p-8 rounded-2xl shadow-lg card-hover">
+                    <i class="fas fa-building text-4xl text-yellow-600 mb-4"></i>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Solutions Commerciales</h3>
+                    <p class="text-gray-700 mb-4">
+                        Systèmes photovoltaïques pour entreprises, commerces et bureaux.
+                    </p>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>Réduction des coûts énergétiques</li>
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>Systèmes de stockage</li>
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>Monitoring en temps réel</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-2xl shadow-lg card-hover">
+                    <i class="fas fa-industry text-4xl text-green-600 mb-4"></i>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Projets Industriels</h3>
+                    <p class="text-gray-700 mb-4">
+                        Installations solaires à grande échelle pour industries et infrastructures.
+                    </p>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>Centrales solaires</li>
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>Solutions hybrides</li>
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>Études de faisabilité</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-2xl shadow-lg card-hover">
+                    <i class="fas fa-lightbulb text-4xl text-purple-600 mb-4"></i>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Kits Solaires</h3>
+                    <p class="text-gray-700 mb-4">
+                        Kits solaires autonomes pour éclairage et petits appareils.
+                    </p>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>Installation facile</li>
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>Prix abordables</li>
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>Garantie incluse</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="bg-gradient-to-br from-red-50 to-red-100 p-8 rounded-2xl shadow-lg card-hover">
+                    <i class="fas fa-tools text-4xl text-red-600 mb-4"></i>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Maintenance & Support</h3>
+                    <p class="text-gray-700 mb-4">
+                        Services de maintenance préventive et corrective pour vos installations.
+                    </p>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>Contrats de maintenance</li>
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>Dépannage rapide</li>
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>Pièces de rechange</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 p-8 rounded-2xl shadow-lg card-hover">
+                    <i class="fas fa-graduation-cap text-4xl text-indigo-600 mb-4"></i>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Formation & Conseil</h3>
+                    <p class="text-gray-700 mb-4">
+                        Formation technique et conseil en énergie solaire pour professionnels.
+                    </p>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>Formations certifiantes</li>
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>Études énergétiques</li>
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>Accompagnement projet</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Galerie Photos Section -->
+    <section id="galerie" class="py-20 px-4 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">
+                    <i class="fas fa-images text-blue-600 mr-3"></i>Galerie Photos
+                </h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
+                <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+                    Découvrez nos réalisations à travers l'Afrique : installations résidentielles, commerciales et industrielles
+                </p>
+            </div>
+            
+            <!-- Filtres de Galerie -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="gallery-filter-btn active px-6 py-3 rounded-full bg-blue-600 text-white font-semibold hover:bg-blue-700 transition" data-filter="all">
+                    Tous les Projets
+                </button>
+                <button class="gallery-filter-btn px-6 py-3 rounded-full bg-gray-200 text-gray-700 font-semibold hover:bg-gray-300 transition" data-filter="residential">
+                    Résidentiel
+                </button>
+                <button class="gallery-filter-btn px-6 py-3 rounded-full bg-gray-200 text-gray-700 font-semibold hover:bg-gray-300 transition" data-filter="commercial">
+                    Commercial
+                </button>
+                <button class="gallery-filter-btn px-6 py-3 rounded-full bg-gray-200 text-gray-700 font-semibold hover:bg-gray-300 transition" data-filter="industrial">
+                    Industriel
+                </button>
+            </div>
+            
+            <!-- Grille de Photos -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
+                
+                <!-- Projet 1 - Résidentiel -->
+                <div class="gallery-item residential group relative overflow-hidden rounded-xl shadow-lg cursor-pointer" data-category="residential">
+                    <div class="aspect-w-16 aspect-h-12 bg-gradient-to-br from-blue-400 to-blue-600">
+                        <div class="flex items-center justify-center">
+                            <div class="text-center text-white p-8">
+                                <i class="fas fa-home text-6xl mb-4 opacity-50"></i>
+                                <h3 class="text-2xl font-bold mb-2">Installation Résidentielle</h3>
+                                <p class="text-sm opacity-90">Villa Dakar, Sénégal</p>
+                                <p class="text-xs mt-2 opacity-75">5 kWp - Système Hybride</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                        <div class="text-white text-center p-6">
+                            <i class="fas fa-search-plus text-4xl mb-3"></i>
+                            <p class="text-sm">Cliquez pour agrandir</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projet 2 - Commercial -->
+                <div class="gallery-item commercial group relative overflow-hidden rounded-xl shadow-lg cursor-pointer" data-category="commercial">
+                    <div class="aspect-w-16 aspect-h-12 bg-gradient-to-br from-green-400 to-green-600">
+                        <div class="flex items-center justify-center">
+                            <div class="text-center text-white p-8">
+                                <i class="fas fa-building text-6xl mb-4 opacity-50"></i>
+                                <h3 class="text-2xl font-bold mb-2">Centre Commercial</h3>
+                                <p class="text-sm opacity-90">Abidjan, Côte d'Ivoire</p>
+                                <p class="text-xs mt-2 opacity-75">25 kWp - Grid-tied</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                        <div class="text-white text-center p-6">
+                            <i class="fas fa-search-plus text-4xl mb-3"></i>
+                            <p class="text-sm">Cliquez pour agrandir</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projet 3 - Industriel -->
+                <div class="gallery-item industrial group relative overflow-hidden rounded-xl shadow-lg cursor-pointer" data-category="industrial">
+                    <div class="aspect-w-16 aspect-h-12 bg-gradient-to-br from-orange-400 to-orange-600">
+                        <div class="flex items-center justify-center">
+                            <div class="text-center text-white p-8">
+                                <i class="fas fa-industry text-6xl mb-4 opacity-50"></i>
+                                <h3 class="text-2xl font-bold mb-2">Usine de Production</h3>
+                                <p class="text-sm opacity-90">Ouagadougou, Burkina Faso</p>
+                                <p class="text-xs mt-2 opacity-75">100 kWp - Off-grid</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                        <div class="text-white text-center p-6">
+                            <i class="fas fa-search-plus text-4xl mb-3"></i>
+                            <p class="text-sm">Cliquez pour agrandir</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projet 4 - Résidentiel -->
+                <div class="gallery-item residential group relative overflow-hidden rounded-xl shadow-lg cursor-pointer" data-category="residential">
+                    <div class="aspect-w-16 aspect-h-12 bg-gradient-to-br from-purple-400 to-purple-600">
+                        <div class="flex items-center justify-center">
+                            <div class="text-center text-white p-8">
+                                <i class="fas fa-solar-panel text-6xl mb-4 opacity-50"></i>
+                                <h3 class="text-2xl font-bold mb-2">Toiture Solaire</h3>
+                                <p class="text-sm opacity-90">Bamako, Mali</p>
+                                <p class="text-xs mt-2 opacity-75">8 kWp - Système Hybride</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                        <div class="text-white text-center p-6">
+                            <i class="fas fa-search-plus text-4xl mb-3"></i>
+                            <p class="text-sm">Cliquez pour agrandir</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projet 5 - Commercial -->
+                <div class="gallery-item commercial group relative overflow-hidden rounded-xl shadow-lg cursor-pointer" data-category="commercial">
+                    <div class="aspect-w-16 aspect-h-12 bg-gradient-to-br from-teal-400 to-teal-600">
+                        <div class="flex items-center justify-center">
+                            <div class="text-center text-white p-8">
+                                <i class="fas fa-hotel text-6xl mb-4 opacity-50"></i>
+                                <h3 class="text-2xl font-bold mb-2">Hôtel</h3>
+                                <p class="text-sm opacity-90">Lomé, Togo</p>
+                                <p class="text-xs mt-2 opacity-75">35 kWp - Grid-tied</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                        <div class="text-white text-center p-6">
+                            <i class="fas fa-search-plus text-4xl mb-3"></i>
+                            <p class="text-sm">Cliquez pour agrandir</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projet 6 - Industriel -->
+                <div class="gallery-item industrial group relative overflow-hidden rounded-xl shadow-lg cursor-pointer" data-category="industrial">
+                    <div class="aspect-w-16 aspect-h-12 bg-gradient-to-br from-red-400 to-red-600">
+                        <div class="flex items-center justify-center">
+                            <div class="text-center text-white p-8">
+                                <i class="fas fa-warehouse text-6xl mb-4 opacity-50"></i>
+                                <h3 class="text-2xl font-bold mb-2">Entrepôt Logistique</h3>
+                                <p class="text-sm opacity-90">Accra, Ghana</p>
+                                <p class="text-xs mt-2 opacity-75">150 kWp - Hybride</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                        <div class="text-white text-center p-6">
+                            <i class="fas fa-search-plus text-4xl mb-3"></i>
+                            <p class="text-sm">Cliquez pour agrandir</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projet 7 - Résidentiel -->
+                <div class="gallery-item residential group relative overflow-hidden rounded-xl shadow-lg cursor-pointer" data-category="residential">
+                    <div class="aspect-w-16 aspect-h-12 bg-gradient-to-br from-pink-400 to-pink-600">
+                        <div class="flex items-center justify-center">
+                            <div class="text-center text-white p-8">
+                                <i class="fas fa-home text-6xl mb-4 opacity-50"></i>
+                                <h3 class="text-2xl font-bold mb-2">Résidence Privée</h3>
+                                <p class="text-sm opacity-90">Cotonou, Bénin</p>
+                                <p class="text-xs mt-2 opacity-75">6 kWp - Off-grid</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                        <div class="text-white text-center p-6">
+                            <i class="fas fa-search-plus text-4xl mb-3"></i>
+                            <p class="text-sm">Cliquez pour agrandir</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projet 8 - Commercial -->
+                <div class="gallery-item commercial group relative overflow-hidden rounded-xl shadow-lg cursor-pointer" data-category="commercial">
+                    <div class="aspect-w-16 aspect-h-12 bg-gradient-to-br from-indigo-400 to-indigo-600">
+                        <div class="flex items-center justify-center">
+                            <div class="text-center text-white p-8">
+                                <i class="fas fa-hospital text-6xl mb-4 opacity-50"></i>
+                                <h3 class="text-2xl font-bold mb-2">Clinique Médicale</h3>
+                                <p class="text-sm opacity-90">Niamey, Niger</p>
+                                <p class="text-xs mt-2 opacity-75">20 kWp - Hybride</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                        <div class="text-white text-center p-6">
+                            <i class="fas fa-search-plus text-4xl mb-3"></i>
+                            <p class="text-sm">Cliquez pour agrandir</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projet 9 - Industriel -->
+                <div class="gallery-item industrial group relative overflow-hidden rounded-xl shadow-lg cursor-pointer" data-category="industrial">
+                    <div class="aspect-w-16 aspect-h-12 bg-gradient-to-br from-yellow-400 to-yellow-600">
+                        <div class="flex items-center justify-center">
+                            <div class="text-center text-white p-8">
+                                <i class="fas fa-tractor text-6xl mb-4 opacity-50"></i>
+                                <h3 class="text-2xl font-bold mb-2">Ferme Agricole</h3>
+                                <p class="text-sm opacity-90">Kigali, Rwanda</p>
+                                <p class="text-xs mt-2 opacity-75">75 kWp - Pompage Solaire</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                        <div class="text-white text-center p-6">
+                            <i class="fas fa-search-plus text-4xl mb-3"></i>
+                            <p class="text-sm">Cliquez pour agrandir</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <!-- Statistiques des Projets -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="text-center p-6 bg-blue-50 rounded-xl">
+                    <div class="text-4xl font-bold text-blue-600 mb-2">150+</div>
+                    <div class="text-gray-700">Projets Réalisés</div>
+                </div>
+                <div class="text-center p-6 bg-green-50 rounded-xl">
+                    <div class="text-4xl font-bold text-green-600 mb-2">5 MW+</div>
+                    <div class="text-gray-700">Capacité Installée</div>
+                </div>
+                <div class="text-center p-6 bg-orange-50 rounded-xl">
+                    <div class="text-4xl font-bold text-orange-600 mb-2">12</div>
+                    <div class="text-gray-700">Pays Couverts</div>
+                </div>
+                <div class="text-center p-6 bg-purple-50 rounded-xl">
+                    <div class="text-4xl font-bold text-purple-600 mb-2">98%</div>
+                    <div class="text-gray-700">Clients Satisfaits</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Simulation Section -->
+    <section id="simulation" class="py-20 px-4 bg-gray-50">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Simulateur de Dimensionnement Solaire</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600">
+                    Estimez vos besoins en panneaux solaires en quelques clics
+                </p>
+            </div>
+            
+            <div class="bg-white p-8 md:p-12 rounded-2xl shadow-xl">
+                <form id="solar-simulator-form" class="space-y-6">
+                    <!-- Type d'installation -->
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Type d'installation</label>
+                        <select id="installation-type" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <option value="residential">Résidentiel</option>
+                            <option value="commercial">Commercial</option>
+                            <option value="industrial">Industriel</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Devise -->
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">
+                            <i class="fas fa-money-bill-wave mr-2"></i>Devise pour les prix
+                        </label>
+                        <select id="currency" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <option value="EUR">Euro (€)</option>
+                            <option value="XOF" selected>Franc CFA (F CFA / XOF)</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Consommation mensuelle -->
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">
+                            Consommation mensuelle moyenne (kWh/mois)
+                        </label>
+                        <input type="number" id="monthly-consumption" min="0" step="10" value="300" 
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                               placeholder="Ex: 300">
+                        <p class="text-sm text-gray-500 mt-2">
+                            <i class="fas fa-info-circle"></i> Consultez votre facture d'électricité
+                        </p>
+                    </div>
+                    
+                    <!-- Localisation -->
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Localisation / Pays</label>
+                        <select id="location" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <option value="sahel">Sahel (Mali, Burkina Faso, Niger)</option>
+                            <option value="west-africa">Afrique de l'Ouest (Sénégal, Côte d'Ivoire, Ghana)</option>
+                            <option value="central-africa">Afrique Centrale (Cameroun, RDC, Gabon)</option>
+                            <option value="east-africa">Afrique de l'Est (Kenya, Tanzanie, Ouganda)</option>
+                            <option value="south-africa">Afrique Australe (Afrique du Sud, Zimbabwe)</option>
+                            <option value="north-africa">Afrique du Nord (Maroc, Algérie, Tunisie)</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Surface disponible -->
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">
+                            Surface disponible pour les panneaux (m²)
+                        </label>
+                        <input type="number" id="available-area" min="0" step="5" value="50" 
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                               placeholder="Ex: 50">
+                        <p class="text-sm text-gray-500 mt-2">
+                            <i class="fas fa-info-circle"></i> Surface de toiture ou terrain disponible
+                        </p>
+                    </div>
+                    
+                    <!-- Type de système -->
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Type de système souhaité</label>
+                        <select id="system-type" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <option value="grid-tied">Connecté au réseau (Grid-tied)</option>
+                            <option value="off-grid">Autonome avec batteries (Off-grid)</option>
+                            <option value="hybrid">Hybride (réseau + batteries)</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Budget estimatif -->
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Budget estimatif (optionnel)</label>
+                        <input type="number" id="budget" min="0" step="100" 
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                               placeholder="Ex: 3000000 (F CFA) ou 5000 (€)">
+                        <p class="text-sm text-gray-500 mt-2">
+                            <i class="fas fa-info-circle"></i> Le prix sera calculé dans la devise sélectionnée
+                        </p>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-blue-600 text-white py-4 rounded-lg font-semibold hover:bg-blue-700 transition transform hover:scale-105">
+                        <i class="fas fa-calculator mr-2"></i>Calculer mon installation
+                    </button>
+                </form>
+                
+                <!-- Résultats de la simulation -->
+                <div id="simulation-results" class="hidden mt-8 pt-8 border-t border-gray-200">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">
+                        <i class="fas fa-chart-line text-green-600 mr-2"></i>Résultats de votre simulation
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-blue-50 p-6 rounded-xl">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-solar-panel text-2xl text-blue-600 mr-3"></i>
+                                <h4 class="font-semibold text-gray-700">Puissance nécessaire</h4>
+                            </div>
+                            <p class="text-3xl font-bold text-blue-600" id="result-power">-</p>
+                            <p class="text-sm text-gray-600 mt-1" id="result-panels">-</p>
+                        </div>
+                        
+                        <div class="bg-yellow-50 p-6 rounded-xl">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-ruler-combined text-2xl text-yellow-600 mr-3"></i>
+                                <h4 class="font-semibold text-gray-700">Surface requise</h4>
+                            </div>
+                            <p class="text-3xl font-bold text-yellow-600" id="result-area">-</p>
+                            <p class="text-sm text-gray-600 mt-1" id="result-area-status">-</p>
+                        </div>
+                        
+                        <div class="bg-green-50 p-6 rounded-xl">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-battery-full text-2xl text-green-600 mr-3"></i>
+                                <h4 class="font-semibold text-gray-700">Capacité batteries</h4>
+                            </div>
+                            <p class="text-3xl font-bold text-green-600" id="result-battery">-</p>
+                            <p class="text-sm text-gray-600 mt-1" id="result-battery-info">-</p>
+                        </div>
+                        
+                        <div class="bg-purple-50 p-6 rounded-xl">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-dollar-sign text-2xl text-purple-600 mr-3"></i>
+                                <h4 class="font-semibold text-gray-700">Coût estimé</h4>
+                            </div>
+                            <p class="text-3xl font-bold text-purple-600" id="result-cost">-</p>
+                            <p class="text-sm text-gray-600 mt-1" id="result-cost-info">-</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-xl">
+                        <h4 class="font-semibold text-gray-800 mb-3">
+                            <i class="fas fa-leaf text-green-600 mr-2"></i>Impact environnemental annuel
+                        </h4>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <p class="text-sm text-gray-600">CO₂ évité</p>
+                                <p class="text-xl font-bold text-green-600" id="result-co2">-</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-600">Équivalent arbres plantés</p>
+                                <p class="text-xl font-bold text-green-600" id="result-trees">-</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 text-center">
+                        <a href="#contact" class="inline-block bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition transform hover:scale-105">
+                            <i class="fas fa-paper-plane mr-2"></i>Demander un devis personnalisé
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 bg-white">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Contactez-nous</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600">
+                    Une question ? Un projet ? Nous sommes là pour vous accompagner
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Formulaire de contact -->
+                <div class="bg-gray-50 p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Envoyez-nous un message</h3>
+                    
+                    <form id="contact-form" class="space-y-4">
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Nom complet *</label>
+                            <input type="text" id="contact-name" required 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                   placeholder="Votre nom">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Email *</label>
+                            <input type="email" id="contact-email" required 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                   placeholder="votre@email.com">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Téléphone</label>
+                            <input type="tel" id="contact-phone" 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                   placeholder="+XXX XXX XXX XXX">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Type de demande *</label>
+                            <select id="contact-type" required 
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <option value="">Sélectionnez...</option>
+                                <option value="quote">Demande de devis</option>
+                                <option value="info">Demande d'information</option>
+                                <option value="installation">Installation solaire</option>
+                                <option value="maintenance">Maintenance/Support</option>
+                                <option value="partnership">Partenariat</option>
+                                <option value="other">Autre</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Message *</label>
+                            <textarea id="contact-message" required rows="5"
+                                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                      placeholder="Décrivez votre projet ou votre demande..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-blue-600 text-white py-4 rounded-lg font-semibold hover:bg-blue-700 transition transform hover:scale-105">
+                            <i class="fas fa-paper-plane mr-2"></i>Envoyer le message
+                        </button>
+                    </form>
+                    
+                    <div id="contact-success" class="hidden mt-6 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg">
+                        <i class="fas fa-check-circle mr-2"></i>
+                        <strong>Message envoyé !</strong> Nous vous répondrons dans les plus brefs délais.
+                    </div>
+                </div>
+                
+                <!-- Informations de contact -->
+                <div>
+                    <div class="bg-blue-600 text-white p-8 rounded-2xl mb-6">
+                        <h3 class="text-2xl font-bold mb-6">Nos coordonnées</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-2xl mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Adresse</h4>
+                                    <p class="text-blue-100">Afrique de l'Ouest<br>Plusieurs bureaux dans la région</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i class="fas fa-phone text-2xl mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Téléphone</h4>
+                                    <p class="text-blue-100">+XXX XXX XXX XXX</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i class="fas fa-envelope text-2xl mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Email</h4>
+                                    <p class="text-blue-100">contact@renergy4all.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i class="fas fa-clock text-2xl mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Horaires</h4>
+                                    <p class="text-blue-100">Lun - Ven : 8h00 - 18h00<br>Sam : 9h00 - 13h00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-yellow-50 to-orange-50 p-8 rounded-2xl">
+                        <h4 class="font-bold text-gray-900 mb-4 text-lg">
+                            <i class="fas fa-info-circle text-yellow-600 mr-2"></i>Pourquoi nous choisir ?
+                        </h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-600 mr-3 mt-1"></i>
+                                <span class="text-gray-700">Expertise reconnue en énergie solaire</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-600 mr-3 mt-1"></i>
+                                <span class="text-gray-700">Solutions adaptées au contexte africain</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-600 mr-3 mt-1"></i>
+                                <span class="text-gray-700">Service après-vente de qualité</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-600 mr-3 mt-1"></i>
+                                <span class="text-gray-700">Prix compétitifs et financement disponible</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Renergy4all</h3>
+                    <p class="text-gray-400 text-sm">
+                        Catalyseur d'une Afrique éclairée et prospère grâce à l'énergie solaire.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Navigation</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#accueil" class="text-gray-400 hover:text-white transition">Accueil</a></li>
+                        <li><a href="#vision" class="text-gray-400 hover:text-white transition">Vision</a></li>
+                        <li><a href="#valeurs" class="text-gray-400 hover:text-white transition">Valeurs</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Services</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Installations Résidentielles</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Solutions Commerciales</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Projets Industriels</a></li>
+                        <li><a href="#simulation" class="text-gray-400 hover:text-white transition">Simulation</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Suivez-nous</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition text-2xl">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition text-2xl">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition text-2xl">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition text-2xl">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
+                <p>&copy; 2025 Renergy4all Group. Tous droits réservés.</p>
+                <p class="mt-2">Inspirés par Genèse 2:15 - Cultivons et préservons notre environnement</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Chatbot Widget -->
+    <div id="chatbot-widget" class="fixed bottom-6 right-6 z-50">
+        <!-- Chatbot Button -->
+        <button id="chatbot-toggle" class="bg-blue-600 text-white w-16 h-16 rounded-full shadow-2xl hover:bg-blue-700 transition transform hover:scale-110 flex items-center justify-center">
+            <i class="fas fa-comments text-2xl"></i>
+        </button>
+        
+        <!-- Chatbot Window -->
+        <div id="chatbot-window" class="chatbot-hidden fixed bottom-24 right-6 w-96 bg-white rounded-2xl shadow-2xl flex-col" style="height: 500px; max-width: calc(100vw - 3rem);">
+            <!-- Header -->
+            <div class="bg-blue-600 text-white p-4 rounded-t-2xl flex items-center justify-between">
+                <div class="flex items-center">
+                    <i class="fas fa-robot text-2xl mr-3"></i>
+                    <div>
+                        <h3 class="font-bold">Assistant Renergy4all</h3>
+                        <p class="text-xs text-blue-100">En ligne</p>
+                    </div>
+                </div>
+                <button id="chatbot-close" class="text-white hover:text-gray-200">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Messages -->
+            <div id="chatbot-messages" class="flex-1 overflow-y-auto p-4 bg-gray-50" style="height: 360px;">
+                <div class="chat-bubble chat-bot">
+                    👋 Bonjour ! Je suis l'assistant virtuel de Renergy4all. Comment puis-je vous aider aujourd'hui ?
+                </div>
+            </div>
+            
+            <!-- Quick Actions -->
+            <div id="chatbot-quick-actions" class="p-3 bg-white border-t border-gray-200">
+                <div class="text-xs text-gray-600 mb-2">Questions rapides :</div>
+                <div class="flex flex-wrap gap-2">
+                    <button class="quick-action-btn text-xs bg-blue-50 text-blue-700 px-3 py-2 rounded-full hover:bg-blue-100 transition">
+                        💰 Prix des kits solaires
+                    </button>
+                    <button class="quick-action-btn text-xs bg-green-50 text-green-700 px-3 py-2 rounded-full hover:bg-green-100 transition">
+                        📦 Types d'installation
+                    </button>
+                    <button class="quick-action-btn text-xs bg-yellow-50 text-yellow-700 px-3 py-2 rounded-full hover:bg-yellow-100 transition">
+                        🔧 Garantie & Maintenance
+                    </button>
+                    <button class="quick-action-btn text-xs bg-purple-50 text-purple-700 px-3 py-2 rounded-full hover:bg-purple-100 transition">
+                        📍 Zones couvertes
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Input -->
+            <div class="p-4 bg-white border-t border-gray-200 rounded-b-2xl">
+                <div class="flex gap-2">
+                    <input type="text" id="chatbot-input" placeholder="Posez votre question..." 
+                           class="flex-1 px-4 py-2 border border-gray-300 rounded-full focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm">
+                    <button id="chatbot-send" class="bg-blue-600 text-white w-10 h-10 rounded-full hover:bg-blue-700 transition flex items-center justify-center">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
